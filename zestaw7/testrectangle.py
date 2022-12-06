@@ -28,12 +28,10 @@ class TestRectangle(unittest.TestCase):
 
     def testMake4(self):
         self.assertEqual(Triangle(0, 0, 0, 4, 2, 4).make4(), (
-            Triangle(0, 0, 1, 4, 0, 2),
-            Triangle(0, 4, 1, 4, 0, 2),
-            Triangle(2, 4, 1, 4, 1, 4),
-            Triangle(1, 4, 1, 4, 0, 2),
-        ))
-
+            Triangle(0, 0, 1.0, 2.0, 0.0, 2.0),
+            Triangle(0, 4, 1.0, 4.0, 0.0, 2.0),
+            Triangle(2, 4, 1.0, 2.0, 1.0, 4.0),
+            Triangle(1.0, 4.0, 1.0, 2.0, 0.0, 2.0)))
 
 if __name__ == '__main__':
     unittest.main()

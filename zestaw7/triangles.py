@@ -11,7 +11,7 @@ class Triangle:
         l1 = self.pt1.distance(self.pt2)
         l2 = self.pt1.distance(self.pt3)
         l3 = self.pt2.distance(self.pt3)
-        if l1 > l2 + l3 or l2 > l1 + l3 or l3 > l1 + l2:
+        if l1 >= l2 + l3 or l2 >= l1 + l3 or l3 >= l1 + l2:
             raise ValueError("Nierówność trójkąta nie jest zachowana")
 
     def __str__(self):
@@ -51,7 +51,7 @@ class Triangle:
     def make4(self):
         point12 = Point((self.pt1.x + self.pt2.x) / 2, (self.pt1.y + self.pt2.y) / 2)
         point23 = Point((self.pt2.x + self.pt3.x) / 2, (self.pt2.y + self.pt3.y) / 2)
-        point13 = Point((self.pt1.x + self.pt3.x) / 2, (self.pt3.y + self.pt3.y) / 2)
+        point13 = Point((self.pt1.x + self.pt3.x) / 2, (self.pt1.y + self.pt3.y) / 2)
         return (Triangle(self.pt1.x, self.pt1.y, point13.x, point13.y, point12.x, point12.y),
                 Triangle(self.pt2.x, self.pt2.y, point23.x, point23.y, point12.x, point12.y),
                 Triangle(self.pt3.x, self.pt3.y, point13.x, point13.y, point23.x, point23.y),
