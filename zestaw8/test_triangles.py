@@ -12,6 +12,10 @@ class TestTriangles:
     def triangleB(self):
         return Triangle(0, 0, 4, 0, 2, 3)
 
+    def testFromPoints(self, triangleA, triangleB):
+        assert Triangle.from_points((Point(1, 2), Point(5, 2), Point(3, 7))) == triangleA
+        assert Triangle.from_points((Point(0, 0), Point(4, 0), Point(2, 3))) == triangleB
+
     def testStr(self, triangleA):
         assert str(triangleA) == "[(1, 2), (5, 2), (3, 7)]"
 
